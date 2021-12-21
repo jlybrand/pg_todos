@@ -10,8 +10,8 @@ const PgPersistence = require("./lib/pg-persistence");
 
 const catchError = require("./lib/catch-error");
 const app = express();
-const host = "localhost";
-const port = 3000;
+const host = config.HOST;
+const port = config.PORT;
 const LokiStore = store(session);
 
 app.set("views", "./views");
@@ -28,7 +28,7 @@ app.use(session({
     path: "/",
     secure: false,
   },
-  name: "todos-session-id",
+  name: "launch-school-todos-session-id",
   resave: false,
   saveUninitialized: true,
   secret: config.SECRET,
