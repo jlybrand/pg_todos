@@ -1,5 +1,4 @@
-// This file contains code from the drop-in replacement portion of the lesson
-
+const config = require("./lib/config");
 const express = require("express");
 const morgan = require("morgan");
 const flash = require("express-flash");
@@ -25,14 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session({
   cookie: {
     httpOnly: true,
-    maxAge: 31 * 24 * 60 * 60 * 1000, // 31 days in millseconds
+    maxAge: 31 * 24 * 60 * 60 * 1000, 
     path: "/",
     secure: false,
   },
-  name: "launch-school-todos-session-id",
+  name: "todos-session-id",
   resave: false,
   saveUninitialized: true,
-  secret: "this is not very secure",
+  secret: config.SECRET,
   store: new LokiStore({}),
 }));
 

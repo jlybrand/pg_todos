@@ -1,0 +1,8 @@
+Installed dotenv
+Created a .env file
+Created heroku app pg-todos
+Created production envrionment variables for SECRET and HOST on heroku
+Created config.js imported to tods.js and dbQuery.js
+
+Defined version of node and npm to use in package.json
+Defined post-build script to tell Heroku to install the production dependencies:
